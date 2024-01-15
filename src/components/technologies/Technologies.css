@@ -1,0 +1,22 @@
+.tech-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100%;
+  background-color: #F5F7F8;
+}
+
+.content-container{
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.img-container {
+  margin-top: 1rem; /* Adjust margin as needed */
+}
+
+.img-container img {
+  width: 10rem; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}

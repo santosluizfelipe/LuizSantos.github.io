@@ -1,0 +1,48 @@
+
+.nav-container {
+  width: 100%;
+  background-color: #F5F7F8;
+  color:#45474B;
+  height: 5rem;
+
+}
+
+.contact-container {
+  width: 100%;
+  border-radius: 9%;
+  border: 2px solid #45474B;
+  padding: 0.5rem;
+  overflow: hidden;
+  font-weight: 600;
+  transition: border-color 0.3s;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  margin-left: 1.5rem;
+}
+
+.nav-right {
+  display: flex; /* Use flex display for flex items */
+  gap: 1rem; /* Adjust the gap between items as needed */
+  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+}
+
+.nav-right p {
+  margin: 0; /* Remove default margin for <p> */
+  transition: color 0.3s;
+}
+
+.nav-right p:hover {
+  color:#F4CE14; /* Set the color you want on hover */
+}
+
+.contact-container:hover {
+  border-color: #F4CE14; /* Change the border color on hover */
+}

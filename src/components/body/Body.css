@@ -1,0 +1,55 @@
+
+.body-container {
+  width: 100%;
+  background-color: #F5F7F8;
+  overflow: hidden;
+  color: #45474B;
+}
+
+.body-header {
+  margin-left: 1.5rem;
+
+}
+
+.body-content {
+  margin-top: 1rem; 
+  margin-left: 1.5rem;
+}
+
+.contact-icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.contact-icons svg {
+  font-size: 300%; 
+  border-radius: 10%; 
+  padding: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.github-icon {
+  margin-right: 1.5rem;
+}
+
+.contact-icons a:visited {
+  color: inherit; 
+}
+
+.contact-icons a:focus,
+.contact-icons a:hover {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.contact-icons a:hover svg {
+  background-color: #F4CE14;
+}
+
+.technologies {
+  flex: 1;  /* Set flex to 1 to take up available space */
+}
+
