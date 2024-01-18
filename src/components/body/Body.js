@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn } from "@mui/icons-material";
+import { GitHub, LinkedIn, FileDownload } from "@mui/icons-material";
 import React from "react";
 import "./Body.css";
 
@@ -43,6 +43,9 @@ const Body = () => {
                 <LinkedIn fontSize="large" />
               </div>
             </a>
+            <div className="download-container">
+             <FileDownload />
+            </div>
           </div>
         </div>
       </div>

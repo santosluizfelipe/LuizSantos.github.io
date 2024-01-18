@@ -1,0 +1,43 @@
+.project-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #F5F7F8;
+  margin-top: 3rem;
+}
+
+.toogle-container{
+  display: flex;
+}
+
+.personal-button{
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  border: none;
+  width: 6rem;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+
+.professional-button{
+  margin-right: 1.5rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  border: none;
+  width: 6rem;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.professional-button:hover{
+  transform: scale(1.15);
+}
+
+.personal-button:hover{
+  transform: scale(1.15);
+}
+

@@ -9,7 +9,7 @@
 
 .contact-container {
   width: 100%;
-  border-radius: 9%;
+  border-radius: 0.5rem;
   border: 2px solid #45474B;
   padding: 0.5rem;
   overflow: hidden;
@@ -31,27 +31,27 @@
 }
 
 .nav-right {
-  display: flex; /* Use flex display for flex items */
-  gap: 1rem; /* Adjust the gap between items as needed */
+  display: flex; 
+  gap: 1rem; 
   margin-top: 0.5rem;
   margin-right: 1.5rem;
 }
 
 .nav-right p {
-  margin: 0; /* Remove default margin for <p> */
+  margin: 0; 
   transition: color 0.3s;
 }
 
 .nav-right p:hover {
-  color:#F4CE14; /* Set the color you want on hover */
+  color:#F4CE14; 
 }
 
 .contact-container:hover {
-  border-color: #F4CE14; /* Change the border color on hover */
+  border-color: #F4CE14; 
 }
 
 .contact-container a {
-  border-color: #F4CE14; /* Change the border color on hover */
+  border-color: #F4CE14; 
   text-decoration: none;
   color: inherit;
 }

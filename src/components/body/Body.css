@@ -71,14 +71,14 @@
 
 .body-content a {
   text-decoration: none;
-  color: blueviolet;
+  color: #F4CE14;
 }
 
 
 .body-content a:focus,
 .body-content a:hover {
   text-decoration: none; 
-  color: blueviolet; 
+  color: #F4CE14; 
 }
 
 .contact-icons a:hover svg {
@@ -87,5 +87,23 @@
 
 .technologies {
   flex: 1;  /* Set flex to 1 to take up available space */
+}
+
+.download-container{
+  width: 0.5rem;
+  height: auto;
+
+}
+
+.download-button{
+  margin-left: 1.5rem;
+  color: #45474B;
+  border-radius: 5%;
+  font-weight: 600;
+}
+
+.download-button:hover{
+  background-color: #F4CE14;
+  color: #45474B;
 }
 
