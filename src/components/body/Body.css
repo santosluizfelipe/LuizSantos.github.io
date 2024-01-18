@@ -4,6 +4,10 @@
   background-color: #F5F7F8;
   overflow: hidden;
   color: #45474B;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
 }
 
 .body-header {
@@ -14,6 +18,8 @@
 .body-content {
   margin-top: 1rem; 
   margin-left: 1.5rem;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .contact-icons {
@@ -31,18 +37,48 @@
   transition: background-color 0.3s;
 }
 
+.linkedin-icon {
+  transition: transform 0.3s ease;
+}
+
 .github-icon {
   margin-right: 1.5rem;
+  transition: transform 0.3s ease;
 }
+
+.github-icon:hover {
+  color: #45474B;
+  transform: scale(1.15);
+}
+
+.linkedin-icon:hover {
+  color: #45474B;
+  transform: scale(1.15);
+}
+
 
 .contact-icons a:visited {
   color: inherit; 
+  outline: none;
 }
 
 .contact-icons a:focus,
 .contact-icons a:hover {
   text-decoration: none; 
   color: inherit; 
+  outline: none;
+}
+
+.body-content a {
+  text-decoration: none;
+  color: blueviolet;
+}
+
+
+.body-content a:focus,
+.body-content a:hover {
+  text-decoration: none; 
+  color: blueviolet; 
 }
 
 .contact-icons a:hover svg {

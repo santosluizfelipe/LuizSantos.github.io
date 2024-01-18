@@ -1,22 +1,47 @@
 .tech-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   height: 100vh;
   width: 100%;
   background-color: #F5F7F8;
 }
 
-.content-container{
+.row-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.content-container {
   margin-top: 1.5rem;
   font-weight: 600;
 }
 
 .img-container {
-  margin-top: 1rem; /* Adjust margin as needed */
+  margin: 1rem; 
 }
 
 .img-container img {
-  width: 10rem; /* Make the image fill the container */
-  height: auto; /* Maintain aspect ratio */
+  width: 5rem; 
+  height: auto; 
+  transition: transform 0.3s ease;
+}
+
+.img-container img:hover {
+  transform: scale(1.15); /* Increase size by 5% on hover */
+}
+
+
+@media (min-width: 768px) {
+  .row-container {
+    max-width: 80%; 
+    margin: 0 auto; 
+  }
 }

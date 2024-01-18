@@ -10,7 +10,7 @@ function Nav() {
         </div>
         <div className="nav-right">
           <div className="contact-container">
-            <p>Say Hello</p>
+            <p><a href="mailto:luizfelipe0598@icloud.com">Say Hello</a></p>
           </div>
         </div>
       </div>

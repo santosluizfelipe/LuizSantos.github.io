@@ -14,7 +14,9 @@ const Body = () => {
         <div className="body-content">
           <p>
             I'm a London-based Brazilian full-stack software engineer, currently
-            working at Cimple, a B2B e-procurement platform. At Cimple, I
+            working at <a  href="https://cimple.uk/"
+              target="_blank"
+              rel="noopener noreferrer">Cimple</a>, a B2B e-procurement platform. At Cimple, I
             collaborate in a cross-functional team of engineers, product
             managers and designers, resulting in an 8% monthly increase in users
             on average and onboarding over 900 clients in the past year alone.
