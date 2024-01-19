@@ -14,8 +14,6 @@ const Projects = () => {
     return  setIsPersonal(true) + setIsprofessional(false) 
   }
 
-  console.log("isProfessional =>", isProfessional)
-  console.log("isPErsonal", isPersonal)
 
   return(
     <>
