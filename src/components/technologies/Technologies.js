@@ -17,13 +17,14 @@ import graphQl from "../../technology-logos/graphQl-logo.png";
 import html from "../../technology-logos/html-logo.png";
 import css from "../../technology-logos/css-logo.png";
 import styledComponents from "../../technology-logos/styled-components-logo.png";
+import Carousel from "./Carousel";
 
 
 
 const Technologies = () => {
   return (
     <div className="tech-container">
-
+{/* 
       <div className="content-container">
         <h3>Technologies that I use:</h3>
       </div>
@@ -97,7 +98,8 @@ const Technologies = () => {
         <img src={styledComponents} alt="styledComponents Logo" />
       </div>
 
-      </div>
+      </div> */}
+      <Carousel />
 
     </div>
   );
