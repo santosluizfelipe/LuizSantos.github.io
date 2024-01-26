@@ -1,6 +1,7 @@
 import React from 'react';
 import './Carousel.css'
 
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import javascriptLogo from "../../technology-logos/js-logo.png";
 import typescriptLogo from "../../technology-logos/typescript-logo.png";
 import react from "../../technology-logos/react-logo.png";
@@ -78,10 +79,10 @@ const Carousel = () => {
                   ))}
               </div>
               <button className="prev-button" onClick={prevSlide}>
-                  {"<"}
+                  {<ArrowBack />}
               </button>
               <button className="next-button" onClick={nextSlide}>
-                  {">"}
+                  {<ArrowForward />}
               </button>
           </div>
       </div>
