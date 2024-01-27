@@ -64,17 +64,36 @@
   text-align: center;
 }
 
-.project-tech{
+.project-tech {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* Allow flex items to wrap to the next row */
   justify-content: center;
-  max-width: 15vh; 
+  max-width: 55vh; 
   height: auto;
 }
 
-.project-image img {
+.project-tech img {
   max-width: 100%; /* Ensure the image doesn't exceed its container width */
   height: auto;
+  border-radius: inherit; /* Inherit border-radius from the parent container */
+}
+
+
+.project-tech .logo {
+  width: 5rem; /* Make each logo take up the full width of its container */
   padding: 1rem;
-  border-radius: 25px;
+  box-sizing: border-box; /* Include padding in the total width */
+  border-radius: 5px;
+}
+
+.project-content .cimple {
+  text-decoration: none;
+  color: #FFA500;
+  font-weight: 600;
+}
+
+.project-content a:focus,
+.project-content a:hover {
+  text-decoration: none; 
+  color: #FFA500; 
 }

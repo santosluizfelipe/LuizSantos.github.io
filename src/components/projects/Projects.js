@@ -47,7 +47,7 @@ const Projects = () => {
               onClick={handleProfessional}
               style={
                 isProfessional
-                  ? { backgroundColor: "#F4CE14" }
+                  ? { backgroundColor: "#FFA500" }
                   : { backgroundColor: "#b2b4b8", color: "#F5F7F8" }
               }
             >
@@ -59,7 +59,7 @@ const Projects = () => {
             onClick={handlePersonal}
             style={
               isPersonal
-                ? { backgroundColor: "#F4CE14" }
+                ? { backgroundColor: "#FFA500" }
                 : { backgroundColor: "#b2b4b8", color: "#F5F7F8" }
             }
           >
@@ -76,38 +76,49 @@ const Projects = () => {
             <div className="project-content">
               <h3>Cimple</h3>
               <p>
-                I'm currently a Full-stack developer at Cimple and we use
-                TypeScript, Next.js, Styled Components, Cypress, Elixir,
-                Phoenix, GraphQL, PostgreSQL and AWS. Cimple understands the
-                complexities in procurement and has created a B2B procurement
-                platform that aims to make it more accessible and intuitive for
-                everyone.
+                I'm currently a Full-stack developer at{" "}
+                <a
+                  className="cimple"
+                  href="https://cimple.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cimple
+                </a>{" "}
+                and we use TypeScript, Next.js, Styled Components, Cypress,
+                Elixir, Phoenix, GraphQL, PostgreSQL and AWS. Cimple understands
+                the complexities in procurement and has created a B2B
+                procurement platform that aims to make it more accessible and
+                intuitive for everyone.
               </p>
             </div>
             <div className="project-tech">
               <div className="logo">
-                <img src={typescriptLogo} alt=" Logo" />
+                <img src={typescriptLogo} alt="Typescript Logo" />
               </div>
               <div className="logo">
-                <img src={nextjs} alt=" Logo" />
+                <img src={react} alt="React Logo" />
               </div>
               <div className="logo">
-                <img src={elixir} alt=" Logo" />
+                <img src={nextjs} alt="nextJs Logo" />
               </div>
               <div className="logo">
-                <img src={pheonix} alt=" Logo" />
+                <img src={elixir} alt="Elixir Logo" />
               </div>
               <div className="logo">
-                <img src={graphQl} alt=" Logo" />
+                <img src={pheonix} alt="pheonix framework Logo" />
               </div>
               <div className="logo">
-                <img src={postgres} alt=" Logo" />
+                <img src={graphQl} alt="graphQl Logo" />
               </div>
               <div className="logo">
-                <img src={styledComponents} alt=" Logo" />
+                <img src={postgres} alt="postgres Logo" />
               </div>
               <div className="logo">
-                <img src={cypress} alt=" Logo" />
+                <img src={styledComponents} alt="styled components Logo" />
+              </div>
+              <div className="logo">
+                <img src={cypress} alt="cypress Logo" />
               </div>
             </div>
           </>
@@ -121,6 +132,40 @@ const Projects = () => {
 
             <div className="project-content">
               <h3>Pensano</h3>
+              <p>
+                As a co-founder of{" "}
+                <a
+                  className="cimple"
+                  href="https://pensano.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Pensano
+                </a>{" "}
+                , I played a pivotal role in the development of our platform,
+                employing my expertise in React, JavaScript, HTML, CSS, and
+                Cypress. At Pensano, our mission is encapsulated in the Italian
+                word "Pensano," meaning "they think." As problem solvers, we
+                think outside the box and approach challenges with
+                intentionality.
+              </p>
+            </div>
+            <div className="project-tech">
+              <div className="logo">
+                <img src={javascriptLogo} alt="Javascript Logo" />
+              </div>
+              <div className="logo">
+                <img src={react} alt="React Logo" />
+              </div>
+              <div className="logo">
+                <img src={cypress} alt="Cypress Logo" />
+              </div>
+              <div className="logo">
+                <img src={html} alt="Html Logo" />
+              </div>
+              <div className="logo">
+                <img src={css} alt="Css Logo" />
+              </div>
             </div>
           </>
         )}

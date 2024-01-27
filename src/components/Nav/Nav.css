@@ -10,14 +10,14 @@
 .contact-container {
   width: 100%;
   border-radius: 0.5rem;
-  border: 2px solid #45474B;
+  border: 2px solid  #FFA500;
   padding: 0.5rem;
   overflow: hidden;
   font-weight: 600;
   transition: border-color 0.3s;
-  transition: border-color 0.3s;
   color: inherit; 
   text-decoration: none;
+  transition: color 0.3s
 }
 
 .flex-container {
@@ -39,19 +39,26 @@
 
 .nav-right p {
   margin: 0; 
+  color:#FFA500;
   transition: color 0.3s;
 }
 
 .nav-right p:hover {
-  color:#F4CE14; 
+  color:#45474B; 
 }
 
 .contact-container:hover {
-  border-color: #F4CE14; 
+  border-color: #45474B; 
+  background-color: #FFA500;
 }
 
 .contact-container a {
-  border-color: #F4CE14; 
+  border-color: #45474B; 
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s; /* Add transition property here */
+}
+
+.contact-container:hover a {
+  color: #45474B; /* Add color change for the link on hover */
 }
