@@ -1,5 +1,5 @@
-import React from 'react';
-import './Carousel.css'
+import React from "react";
+import "./Carousel.css";
 
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import javascriptLogo from "../../technology-logos/js-logo.png";
@@ -19,8 +19,7 @@ import graphQl from "../../technology-logos/graphQl-logo.png";
 import html from "../../technology-logos/html-logo.png";
 import css from "../../technology-logos/css-logo.png";
 import styledComponents from "../../technology-logos/styled-components-logo.png";
-import { useState } from 'react';
-
+import { useState, useEffect } from "react";
 
 const Carousel = () => {
   const logos = [
@@ -43,49 +42,87 @@ const Carousel = () => {
     styledComponents,
   ];
 
-  const settings = {
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [clickCount, setClickCount] = useState(0);
+  const [clickLimit, setClickLimit] = useState(4);
+  console.log("window.innerWidth", window.innerWidth);
+
+  useEffect(() => {
+    // Update click limit based on screen size
+    // const updateClickLimit = () => {
+    //   const screenWidth = window.innerWidth;
+    //   setClickLimit(screenWidth >= 949 ? 4 : 3);
+
+    // }
+    const updateClickLimit = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth > 1750) {
+        setClickLimit(3);
+      } else if (screenWidth >= 949) {
+        setClickLimit(3);
+      } else {
+        setClickLimit(4);
+      }
+    };
+
+    // Initial setup
+    updateClickLimit();
+
+    // Listen for window resize events
+    window.addEventListener("resize", updateClickLimit);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", updateClickLimit);
+  }, []);
+
+  const nextSlide = () => {
+    if (clickCount < clickLimit) {
+      setCurrentSlide((prev) => {
+        const next = (prev + 4) % logos.length;
+        setClickCount((count) => count + 1);
+        return next === logos.indexOf(html) ? 0 : next;
+      });
+    } else {
+      // If clicked the allowed number of times, reset the click count and start from the beginning
+      setClickCount(0);
+      setCurrentSlide(0);
+    }
   };
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 4 + logos.length) % logos.length);
+  };
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    const nextSlide = () => {
-      setCurrentSlide((prev) => (prev + 4) % logos.length);
-    };
-  
-    const prevSlide = () => {
-      setCurrentSlide((prev) => (prev - 4 + logos.length) % logos.length);
-    };
-  
-    return (
-      <div className="tech-container">
-          <div className="content-container">
-              <h3>Technologies that I use:</h3>
-          </div>
-          <div className="carousel-container">
-              <div className="carousel" style={{ transform: `translateX(${-currentSlide * 25}%)` }}>
-                  {logos.map((logo, index) => (
-                      <div
-                          key={index}
-                          className={`img-container ${
-                              index === currentSlide ? "active" : ""
-                          }`}
-                      >
-                          <img src={logo} alt={`Logo ${index + 1}`} />
-                      </div>
-                  ))}
-              </div>
-              <button className="prev-button" onClick={prevSlide}>
-                  {<ArrowBack />}
-              </button>
-              <button className="next-button" onClick={nextSlide}>
-                  {<ArrowForward />}
-              </button>
-          </div>
+  return (
+    <div className="tech-container">
+      <div className="content-container">
+        <h3>Technologies that I use:</h3>
       </div>
+
+      <div className="carousel-container">
+        <div
+          className="carousel"
+          style={{ transform: `translateX(${-currentSlide * 25}%)` }}
+        >
+          {logos.map((logo, index) => (
+            <div
+              key={index}
+              className={`img-container ${
+                index === currentSlide ? "active" : ""
+              }`}
+            >
+              <img src={logo} alt={`Logo ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+        <button className="prev-button" onClick={prevSlide}>
+          {<ArrowBack />}
+        </button>
+        <button className="next-button" onClick={nextSlide}>
+          {<ArrowForward />}
+        </button>
+      </div>
+    </div>
   );
 };
 
