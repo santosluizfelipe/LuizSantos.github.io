@@ -1,19 +1,31 @@
-.project-container{
+.project-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: #F5F7F8;
+  background-color: #f5f7f8;
   margin-top: 0rem;
+  overflow: scroll;
 }
 
-.toogle-container{
+.header-container {
+  margin-top: 3rem;
+}
+
+.project-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.toogle-container {
   display: flex;
 }
 
-.personal-button{
+.personal-button {
   border-radius: 0.2rem;
   padding: 0.5rem;
   border: none;
@@ -22,8 +34,7 @@
   transition: transform 0.3s ease;
 }
 
-
-.professional-button{
+.professional-button {
   margin-right: 1.5rem;
   border-radius: 0.2rem;
   padding: 0.5rem;
@@ -33,67 +44,89 @@
   transition: transform 0.3s ease;
 }
 
-.professional-button:hover{
+.professional-button:hover {
   transform: scale(1.15);
 }
 
-.personal-button:hover{
+.personal-button:hover {
   transform: scale(1.15);
 }
 
-.project-image{
+.project-image {
   display: flex;
   justify-content: center;
-  max-width: 65vh; 
-  height: auto;
+  max-width: 40%;
+  max-height: 60vh;
 }
 
 .project-image img {
-  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  max-width: 100%;
   height: auto;
   padding: 1rem;
   border-radius: 25px;
 }
 
-.project-content{
+.project-content {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 10%;
-  padding-right: 10%;
   text-align: center;
+  width: 40%;
 }
 
 .project-tech {
   display: flex;
-  flex-wrap: wrap; /* Allow flex items to wrap to the next row */
+  flex-wrap: wrap;
   justify-content: center;
-  max-width: 55vh; 
+  max-width: 55vh;
   height: auto;
 }
 
 .project-tech img {
-  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  max-width: 100%;
   height: auto;
-  border-radius: inherit; /* Inherit border-radius from the parent container */
+  border-radius: inherit;
 }
 
-
 .project-tech .logo {
-  width: 5rem; /* Make each logo take up the full width of its container */
+  /* width:calc(25% - 2rem); */
+  width: 4.5rem;
   padding: 1rem;
-  box-sizing: border-box; /* Include padding in the total width */
+  box-sizing: border-box;
   border-radius: 5px;
 }
 
 .project-content .cimple {
   text-decoration: none;
-  color: #FFA500;
+  color: #ffa500;
   font-weight: 600;
 }
 
 .project-content a:focus,
 .project-content a:hover {
-  text-decoration: none; 
-  color: #FFA500; 
+  text-decoration: none;
+  color: #ffa500;
+}
+
+@media (max-width: 450px) {
+  .project-display {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: scroll;
+  }
+
+  .project-tech .logo{
+    width: 30%;
+    padding: 0.5rem;
+
+  }
+
+  .project-image {
+
+    max-width: 70%;
+    max-height: 60vh;
+  }
 }

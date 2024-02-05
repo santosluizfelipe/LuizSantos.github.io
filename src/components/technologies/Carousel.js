@@ -45,21 +45,31 @@ const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [clickCount, setClickCount] = useState(0);
   const [clickLimit, setClickLimit] = useState(4);
+
   console.log("window.innerWidth", window.innerWidth);
 
+
   useEffect(() => {
-    // Update click limit based on screen size
+
     // const updateClickLimit = () => {
     //   const screenWidth = window.innerWidth;
-    //   setClickLimit(screenWidth >= 949 ? 4 : 3);
+    //   if (screenWidth > 1750) {
+    //     setClickLimit(3);
+    //   } else if (screenWidth >= 949) {
+    //     setClickLimit(3);
+    //   } else {
+    //     setClickLimit(4);
+    //   }
+    // };
 
-    // }
     const updateClickLimit = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth > 1750) {
+      if (screenWidth < 1750) {
         setClickLimit(3);
-      } else if (screenWidth >= 949) {
-        setClickLimit(3);
+      } else if (screenWidth < 949) {
+        setClickLimit(5) ;
+      } else if (screenWidth < 431) {
+        setClickLimit(20);
       } else {
         setClickLimit(4);
       }
@@ -83,7 +93,6 @@ const Carousel = () => {
         return next === logos.indexOf(html) ? 0 : next;
       });
     } else {
-      // If clicked the allowed number of times, reset the click count and start from the beginning
       setClickCount(0);
       setCurrentSlide(0);
     }

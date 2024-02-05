@@ -6,11 +6,11 @@
   height: 40vh;
   width: 100%;
   background-color: #F5F7F8;
-
 }
 
 .content-container {
   text-align: center;
+  margin-top: 3rem;
 }
 
 .carousel-container {
