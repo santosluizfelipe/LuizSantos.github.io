@@ -15,7 +15,6 @@
 
 .carousel-container {
   position: relative;
-  overflow: hidden;
   width: 85%;
 }
 
@@ -23,8 +22,6 @@
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-
-
 
 .img-container {
   flex: 0 0 15%; /* Adjust the width of each logo container */
@@ -69,14 +66,36 @@
   right: 0;
 }
 
+
+
 @media (max-width: 900px) {
   .carousel-container {
-    width: 100%; /* Adjust to 100% for better responsiveness */
+    width: 100%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .tech-container{
+    overflow: hidden;
   }
 
   .carousel {
-    flex-wrap: nowrap; 
-    overflow-x: scroll; 
-    -webkit-overflow-scrolling: touch; 
+    flex-wrap: nowrap;
+    /* overflow: scroll;  */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+    height: 3px;
+  }
+  
+  .carousel-container::-webkit-scrollbar-thumb {
+    background-color: #ffa500; /* Set the color of the scrollbar thumb to orange */
+    border-radius: 15px; /* Optional: Set the border radius of the thumb */
+  }
+  
+  .carousel-container::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* Set the color of the scrollbar track */
   }
 }

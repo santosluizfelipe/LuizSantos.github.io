@@ -99,19 +99,12 @@ const Carousel = () => {
     touchStartX.current = e.touches[0].clientX;
   };
 
-  // const handleTouchMove = (e) => {
-  //   const touchEndX = e.touches[0].clientX;
-  //   const deltaX = touchStartX.current - touchEndX;
 
-
-  //   if (deltaX > 50) {
-  //     nextSlide();
-  //   } else if (deltaX < -50) {
-  //     prevSlide();
-  //   }
-  // };
 
   const handleTouchMove = (e) => {
+
+    
+
     if (isMobile) {
       const touchEndX = e.touches[0].clientX;
       const deltaX = touchStartX.current - touchEndX;

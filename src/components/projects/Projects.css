@@ -7,7 +7,6 @@
   width: 100%;
   background-color: #f5f7f8;
   margin-top: 0rem;
-  overflow-y: auto;
 }
 
 .header-container {
@@ -19,6 +18,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  scroll-behavior: smooth;
 }
 
 .toogle-container {
@@ -89,7 +89,6 @@
 }
 
 .project-tech .logo {
-  /* width:calc(25% - 2rem); */
   width: 4.5rem;
   padding: 1rem;
   box-sizing: border-box;
@@ -116,7 +115,15 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    
   }
+
+  .project-container{
+    height: 100%;
+    padding-bottom: 5rem;
+    overflow: scroll;
+  }
+
 
   .project-image img, .project-content {
     max-height: 50vh;
@@ -134,11 +141,6 @@
 
   .project-tech .logo {
     width: 30%;
-    padding: 0.5rem;
-  }
-
-  .project-tech .logo {
-    min-width: 30%;
     padding: 0.5rem;
   }
 }
