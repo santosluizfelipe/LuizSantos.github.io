@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Carousel.css";
 
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
@@ -44,34 +44,27 @@ const Carousel = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [clickCount, setClickCount] = useState(0);
-  const [clickLimit, setClickLimit] = useState(4);
+  const [clickLimit, setClickLimit] = useState(10);
+  const [isMobile, setIsMobile] = useState(false);
 
-  console.log("window.innerWidth", window.innerWidth);
+  const carouselRef = useRef(null);
+  const touchStartX = useRef(0);
+
 
 
   useEffect(() => {
 
-    // const updateClickLimit = () => {
-    //   const screenWidth = window.innerWidth;
-    //   if (screenWidth > 1750) {
-    //     setClickLimit(3);
-    //   } else if (screenWidth >= 949) {
-    //     setClickLimit(3);
-    //   } else {
-    //     setClickLimit(4);
-    //   }
-    // };
-
     const updateClickLimit = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 1750) {
+      if (screenWidth > 1750) {
         setClickLimit(3);
-      } else if (screenWidth < 949) {
-        setClickLimit(5) ;
-      } else if (screenWidth < 431) {
-        setClickLimit(20);
-      } else {
+        setIsMobile(false)
+      } else if (screenWidth >= 949) {
         setClickLimit(4);
+        setIsMobile(false)
+      } else {
+        setClickLimit(9);
+        setIsMobile(true);
       }
     };
 
@@ -102,13 +95,59 @@ const Carousel = () => {
     setCurrentSlide((prev) => (prev - 4 + logos.length) % logos.length);
   };
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  // const handleTouchMove = (e) => {
+  //   const touchEndX = e.touches[0].clientX;
+  //   const deltaX = touchStartX.current - touchEndX;
+
+
+  //   if (deltaX > 50) {
+  //     nextSlide();
+  //   } else if (deltaX < -50) {
+  //     prevSlide();
+  //   }
+  // };
+
+  const handleTouchMove = (e) => {
+    if (isMobile) {
+      const touchEndX = e.touches[0].clientX;
+      const deltaX = touchStartX.current - touchEndX;
+
+      // Adjust the sensitivity as needed
+      if (Math.abs(deltaX) > 10) {
+        carouselRef.current.scrollLeft += deltaX;
+      }
+    } else {
+      const touchEndX = e.touches[0].clientX;
+      const deltaX = touchStartX.current - touchEndX;
+
+      if (deltaX > 50) {
+        nextSlide();
+      } else if (deltaX < -50) {
+        prevSlide();
+      }
+    }
+  };
+
   return (
+    <>
+    {!isMobile && (
+
+    
     <div className="tech-container">
       <div className="content-container">
         <h3>Technologies that I use:</h3>
       </div>
 
-      <div className="carousel-container">
+      <div
+        className="carousel-container"
+        ref={carouselRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        >
         <div
           className="carousel"
           style={{ transform: `translateX(${-currentSlide * 25}%)` }}
@@ -123,15 +162,51 @@ const Carousel = () => {
               <img src={logo} alt={`Logo ${index + 1}`} />
             </div>
           ))}
+          
         </div>
-        <button className="prev-button" onClick={prevSlide}>
+        {!isMobile && (
+          <>
+            <button className="prev-button" onClick={prevSlide}>
           {<ArrowBack />}
         </button>
         <button className="next-button" onClick={nextSlide}>
           {<ArrowForward />}
         </button>
+          </>
+        )}
+        
       </div>
     </div>
+    )}
+
+    {isMobile && (
+      <div className="tech-container">
+      <div className="content-container">
+        <h3>Technologies that I use:</h3>
+      </div>
+
+      <div
+        className={`carousel-container ${isMobile ? 'mobile-scroll' : ''}`}
+        ref={carouselRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+      >
+        <div className="carousel">
+          {logos.map((logo, index) => (
+            <div
+              key={index}
+              className={`img-container ${
+                index === currentSlide ? "active" : ""
+              }`}
+            >
+              <img src={logo} alt={`Logo ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    )}
+    </>
   );
 };
 

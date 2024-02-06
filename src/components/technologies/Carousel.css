@@ -24,6 +24,8 @@
   transition: transform 0.5s ease-in-out;
 }
 
+
+
 .img-container {
   flex: 0 0 15%; /* Adjust the width of each logo container */
   text-align: center;
@@ -68,7 +70,13 @@
 }
 
 @media (max-width: 900px) {
-  .tech-container {
-    height: 40vh;
+  .carousel-container {
+    width: 100%; /* Adjust to 100% for better responsiveness */
+  }
+
+  .carousel {
+    flex-wrap: nowrap; 
+    overflow-x: scroll; 
+    -webkit-overflow-scrolling: touch; 
   }
 }
