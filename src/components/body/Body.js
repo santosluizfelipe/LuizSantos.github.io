@@ -12,7 +12,7 @@ const Body = () => {
         </div>
         <div className="body-content">
           <p>
-            I'm a London-based Brazilian full-stack software engineer, currently
+            I'm a London-based Brazilian full-stack software engineer, previously
             working at{" "}
             <a
               href="https://cimple.uk/"

@@ -103,8 +103,6 @@ const Carousel = () => {
 
   const handleTouchMove = (e) => {
 
-    
-
     if (isMobile) {
       const touchEndX = e.touches[0].clientX;
       const deltaX = touchStartX.current - touchEndX;
